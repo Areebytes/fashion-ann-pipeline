@@ -3,6 +3,8 @@ __pycache__/
 *.pyc
 
 .dvc/cache/
+data/processed/
+.dvc/tmp/
 
 *.h5
 
