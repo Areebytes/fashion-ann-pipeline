@@ -3,6 +3,7 @@ __pycache__/
 *.pyc
 
 .dvc/cache/
+.dvc/tmp/
 
 *.h5
 
@@ -10,5 +11,6 @@ __pycache__/
 
 # DVC credentials/tokens
 .credentials/
+
+/models
 data/processed/
-.dvc/tmp/
