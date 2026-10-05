@@ -10,9 +10,15 @@ y_train = np.load("data/raw/y_train.npy")
 x_test = np.load("data/raw/x_test.npy")
 y_test = np.load("data/raw/y_test.npy")
 
-# Normalize to [0, 1]
+# Standardize using training-set mean and standard deviation
 x_train = x_train.astype("float32") / 255.0
 x_test = x_test.astype("float32") / 255.0
+
+mean = x_train.mean()
+std = x_train.std()
+
+x_train = (x_train - mean) / (std + 1e-7)
+x_test = (x_test - mean) / (std + 1e-7)
 
 x_tr, x_val, y_tr, y_val = train_test_split(
     x_train, y_train,
